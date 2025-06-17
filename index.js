@@ -1,7 +1,7 @@
 // let maVariable = prompt("Quel est ton prénom?")
 // alert("To11111111111114444jjjjj")
 
-// ** Exercice 4-1 **
+/* ** Exercice 4-1 **
 let premiereSaisie = "";
 premiereSaisie = prompt("Ecrivez : 'Bonjour' ou 'tu vas bien?").toLowerCase();
 
@@ -14,7 +14,14 @@ if (premiereSaisie == "bonjour") {
     if (troisiemeSaisie === "oui") {
       quatriemeSaisie = prompt("Tu vas aller à la plage ?");
       if (quatriemeSaisie === "oui") {
-        alert("Amuse toi bien!");
+        sixiemeSaisie = prompt("T'es + bronzette ou nage?")
+        if(sixiemeSaisie === "bronzette"){
+          alert("Met de la creme solaire si tu ne veux pas cramer")
+        }else if(sixiemeSaisie === "nage"){
+          alert("Fais attention l'eau est froide !")
+        }else{
+          alert("Mmh tu preferes peut-etre faire des chateaux de sables....")
+        }
       } else {
         alert("Tu iras une prochaine fois !");
       }
@@ -41,6 +48,62 @@ if (premiereSaisie == "bonjour") {
     }
 }else{
     alert("Désolé, je n'ai pas compris....");
-}
- 
+} */
 
+//-------------Exercice 3--------------------------------------------------------------------
+
+//  for(let i=1;i<200;i++){
+//   if(i%3==0 && i%5==0){
+//     console.log("FizzBuzz");
+//     }else if(i%3==0){
+//       console.log("Fizz")
+//     }else if(i%5==0){
+//       console.log("Buzz")
+//     }else{
+//       console.log(i);
+//     }
+    
+//  }
+
+// function conqueteAmine(a){
+//   return a*100;
+// }
+// console.log("Amine espererai augmenter ses conquêtes de : "+"+"+conqueteAmine(2)+" meufs (au minimum)");
+
+// --------------------EXO 4--------------------
+
+//fonction division:
+
+// function diviserParDeux(a){
+//   return a/2;
+// }
+// console.log(diviserParDeux(4));
+
+//fonction somme:
+
+// var n= Math.random();
+// function sommeNombre(a,b){
+//   return a+b;
+// }
+// console.log(sommeNombre(n,1));
+
+//signe aleatoire-------------------------------
+// function signe(a){
+//   if(a>0){
+//     return 'positif'
+//   }else if(a<0){
+//     return "négatif"
+//   }else{
+//     return "nul"
+//   }
+// }
+// console.log(signe(Math.random()))
+
+function factorielle(somme){ 
+for(let i=1; i=somme-1;i++){
+  let valeur=somme*i
+  valeur+=valeur
+  return valeur
+}
+}
+console.log(factorielle(3))
