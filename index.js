@@ -99,11 +99,29 @@ if (premiereSaisie == "bonjour") {
 // }
 // console.log(signe(Math.random()))
 
-function factorielle(somme){ 
-for(let i=1; i=somme-1;i++){
-  let valeur=somme*i
-  valeur+=valeur
-  return valeur
-}
-}
-console.log(factorielle(3))
+
+
+// function factorielle(valeur){ 
+// let somme = 1;
+// for(let i=1; i<=valeur;i++){
+//   somme *= i;
+// }
+// return somme;
+// }
+// console.log(factorielle(2))
+
+const mousemove = document.querySelector(".mousemove");
+
+window.addEventListener("mousemove", (r) => {
+  console.log(r);
+  mousemove.style.left = r.pageX + "px";
+  mousemove.style.top = r.pageY + "px";
+});
+
+window.addEventListener("mousedown", () => {
+  mousemove.style.transform = "scale(2) translate(-25%, -25%)";
+});
+
+window.addEventListener("mouseup", () => {
+  mousemove.style.transform = "scale(1) translate(50%, 50%)";
+});
