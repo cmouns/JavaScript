@@ -110,6 +110,9 @@ if (premiereSaisie == "bonjour") {
 // }
 // console.log(factorielle(2))
 
+
+// Exemple de la vidéo sur JS ----------------------------------
+/*
 const mousemove = document.querySelector(".mousemove");
 
 window.addEventListener("mousemove", (r) => {
@@ -124,4 +127,132 @@ window.addEventListener("mousedown", () => {
 
 window.addEventListener("mouseup", () => {
   mousemove.style.transform = "scale(1) translate(50%, 50%)";
-});
+});*/
+
+// Exercice 6 : Chifoumi 
+
+/*
+  function comparer(choix1, choix2) {
+  if (choix1 === choix2) {
+    return "égalité";
+  }
+    switch (choix1) {
+    case "pierre":
+      return choix2 === "ciseaux" ? "ordi" : "joueur";
+    case "feuille":
+      return choix2 === "pierre" ? "ordi" : "joueur";
+    case "ciseaux":
+      return choix2 === "feuille" ? "ordi" : "joueur";
+    default:
+      throw new Error("Choix invalide.");
+    }
+}
+
+function chifoumi(){
+  let scoreOrdi = 0;
+  let scoreUtilisateur =0;
+
+
+    while(scoreOrdi !=3 && scoreUtilisateur !=3){
+
+    let choix1 = Math.random() < 0.33? "ciseaux" : Math.random() < 0.66 ? "pierre" : "feuille";
+    let choix2 = prompt("Choisissez pierre, feuille ou ciseaux:").toLowerCase()
+
+    
+    if(comparer(choix1, choix2) === "ordi"){
+      scoreOrdi +=  1;
+      alert("l'ordinateur marque cette manche en jouant " + choix1+ " contre "+choix2+ " pour le joueur !")
+    }else if (comparer(choix1, choix2) === "joueur"){
+      scoreUtilisateur +=1;
+      alert("le joueur marque cette manche en jouant " + choix1+ " contre "+choix2+ " pour l'ordinateur !")
+    }else{
+        alert("Égalité! personne ne gagne!")
+      }
+
+ }
+  return "Le score finale est de : " + scoreOrdi+ " pour l'ordinateur et de : "+ scoreUtilisateur+ " pour l'utilisateur !"
+
+  }
+alert(chifoumi())*/
+
+//--------------------EXERCICE 7-------------------------
+/*let jours = [ 'lun', '007', 'mer', 'jeu', 'ven', 'sam', 'BUG' ];
+// Retire le dernier element du tableau 
+jours.pop()
+console.log(jours)
+//Afficher les valeurs du tableau dans la console
+console.log(jours)
+// ajouter la valeur 'dim' à la fin du tableau
+jours.push('dim')
+console.log(jours)
+// Remplacer '007' par 'mar'
+jours[1] = 'mar'
+console.log(jours)
+//Afficher le nombre de valeurs du tableau dans la console
+console.log(jours.length)
+// afficher la troisième valeur du tableau dans la console
+console.log(jours[2])
+// Quelle est la valeur finale du tableau, après avoir effectué toutes ces opérations ?
+[ 'lun', 'mar', 'mer', 'jeu', 'ven', 'sam', 'dim' ]*/
+
+//-------------------------------Épicerie------------------------
+/*let fruits = ['Mangue', 'Raisin', 'Figue', 'Kiwi']
+
+alert("Voici les fruits disponible: "+ fruits)
+let fruitChoisis = prompt("Quel fruit désiriez-vous acheter ?")
+fruits.indexOf(fruitChoisis) >=0 ? fruits.splice(fruits.indexOf(fruitChoisis), 1) : alert("Indisponible")
+alert("Voici les fruits disponible: "+ fruits)*/
+
+//--------------------------------Jeu du pendu-------------------
+var mauvaisesLettres = [ ];
+var lettresAttendues = [ 's', 'u', 'p', 'e', 'r' ];
+let lettresTrouvees = "";
+
+while(mauvaisesLettres.length < 10 && lettresAttendues.length >0){
+  alert('Lettres à trouver pour le pendu : ' + lettresAttendues.length + '\nLettres déjà trouvées : ' + lettresTrouvees+ '\nTentatives restante : '+(10 - mauvaisesLettres.length));
+  let lettrePropose = prompt("Proposez une lettre").toLowerCase();
+  
+
+  if(lettresAttendues.indexOf(lettrePropose) != -1){
+    alert("Bonne lettre !");
+    while(lettresAttendues.indexOf(lettrePropose) !== -1){
+      let index = lettresAttendues.indexOf(lettrePropose);
+      lettresAttendues.splice(index, 1);
+      lettresTrouvees += lettrePropose;
+    }
+  }else{
+    alert("Mauvaise lettre !")
+    mauvaisesLettres.push(lettrePropose)
+    console.log(mauvaisesLettres , lettresAttendues);
+    
+  }
+}
+console.log("test3");
+
+if(mauvaisesLettres.length === 10){
+  alert('Perdu ! Le mot était : ' + lettresAttendues.join(''));
+}else{
+  alert('Gagné ! le mot était' +lettresTrouvees)
+}
+
+// let m=[],a=['s','u','p','e','r'],t="";
+// while(m.length<10&&a.length){
+//   let l=prompt(`Lettres à trouver: ${a.length}\nTrouvées: ${t}\nTentatives: ${10-m.length}`).toLowerCase();
+//   a.includes(l)?(t+=l,a=a.filter(x=>x!=l),alert("Bonne lettre !")):(m.push(l),alert("Mauvaise lettre !"));
+// }
+// alert((m.length==10?"Perdu ! Le mot était : super":"Gagné ! le mot était "+t));
+
+
+/*
+  lettresAttendues.indexOf(lettrePropose) >=0 ? lettresAttendues.splice(lettresAttendues.indexOf(lettrePropose),1) : mauvaisesLettres.splice(mauvaisesLettres.length,0,lettrePropose)
+  console.log(lettresAttendues, mauvaisesLettres);
+  mauvaisesLettres.length ===10? alert("perdu") : lettresAttendues.length === 0 ? alert("bravo"): null;
+
+}  */
+  
+
+
+
+
+
+
