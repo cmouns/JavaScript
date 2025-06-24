@@ -1,4 +1,4 @@
-// let maVariable = prompt("Quel est ton prénom?")
+  // let maVariable = prompt("Quel est ton prénom?")
 // alert("To11111111111114444jjjjj")
 
 /* ** Exercice 4-1 **
@@ -204,36 +204,36 @@ fruits.indexOf(fruitChoisis) >=0 ? fruits.splice(fruits.indexOf(fruitChoisis), 1
 alert("Voici les fruits disponible: "+ fruits)*/
 
 //--------------------------------Jeu du pendu-------------------
-var mauvaisesLettres = [ ];
-var lettresAttendues = [ 's', 'u', 'p', 'e', 'r' ];
-let lettresTrouvees = "";
+// var mauvaisesLettres = [ ];
+// var lettresAttendues = [ 's', 'u', 'p', 'e', 'r' ];
+// let lettresTrouvees = "";
 
-while(mauvaisesLettres.length < 10 && lettresAttendues.length >0){
-  alert('Lettres à trouver pour le pendu : ' + lettresAttendues.length + '\nLettres déjà trouvées : ' + lettresTrouvees+ '\nTentatives restante : '+(10 - mauvaisesLettres.length));
-  let lettrePropose = prompt("Proposez une lettre").toLowerCase();
+// while(mauvaisesLettres.length < 10 && lettresAttendues.length >0){
+//   alert('Lettres à trouver pour le pendu : ' + lettresAttendues.length + '\nLettres déjà trouvées : ' + lettresTrouvees+ '\nTentatives restante : '+(10 - mauvaisesLettres.length));
+//   let lettrePropose = prompt("Proposez une lettre").toLowerCase();
   
 
-  if(lettresAttendues.indexOf(lettrePropose) != -1){
-    alert("Bonne lettre !");
-    while(lettresAttendues.indexOf(lettrePropose) !== -1){
-      let index = lettresAttendues.indexOf(lettrePropose);
-      lettresAttendues.splice(index, 1);
-      lettresTrouvees += lettrePropose;
-    }
-  }else{
-    alert("Mauvaise lettre !")
-    mauvaisesLettres.push(lettrePropose)
-    console.log(mauvaisesLettres , lettresAttendues);
+//   if(lettresAttendues.indexOf(lettrePropose) != -1){
+//     alert("Bonne lettre !");
+//     while(lettresAttendues.indexOf(lettrePropose) !== -1){
+//       let index = lettresAttendues.indexOf(lettrePropose);
+//       lettresAttendues.splice(index, 1);
+//       lettresTrouvees += lettrePropose;
+//     }
+//   }else{
+//     alert("Mauvaise lettre !")
+//     mauvaisesLettres.push(lettrePropose)
+//     console.log(mauvaisesLettres , lettresAttendues);
     
-  }
-}
-console.log("test3");
+//   }
+// }
+// console.log("test3");
 
-if(mauvaisesLettres.length === 10){
-  alert('Perdu ! Le mot était : ' + lettresAttendues.join(''));
-}else{
-  alert('Gagné ! le mot était' +lettresTrouvees)
-}
+// if(mauvaisesLettres.length === 10){
+//   alert('Perdu ! Le mot était : ' + lettresAttendues.join(''));
+// }else{
+//   alert('Gagné ! le mot était' +lettresTrouvees)
+// }
 
 // let m=[],a=['s','u','p','e','r'],t="";
 // while(m.length<10&&a.length){
@@ -249,8 +249,41 @@ if(mauvaisesLettres.length === 10){
   mauvaisesLettres.length ===10? alert("perdu") : lettresAttendues.length === 0 ? alert("bravo"): null;
 
 }  */
-  
+//-------------------------------Exo 8--------------------
+var annuaire = {
+  patricia: '06 66 66 66 66',
+  david: '07 77 77 77 77',
+};
 
+
+
+// alert(annuaire[nomAmi])
+
+// for(nomAmi in annuaire){
+//   alert(nomAmi + ' : ' + annuaire[nomAmi])
+// }
+
+function ajouter(nom, tel){
+
+  return annuaire[nom] = tel;
+   
+}
+
+// function s(nom){
+// if(nom in annuaire){
+// return delete annuaire[nom]
+// }else{
+//   return "Le nom saisie n'est pas présent dans l'annuaire..."
+// }
+// }
+let choix = prompt("Voulez-vous ajouter(a) / supprimer (s) / rechercher(r) ou afficher la liste(l) ? (q) pour quitter").toLowerCase(); 
+switch(choix){
+  case "a" :
+    let nomAmi = prompt('Nom de votre ami ? (patricia ou david)').toLowerCase();
+    let telAmi = prompt('Tel de votre ami ?').toLowerCase();
+    ajouter(nomAmi, telAmi);
+    console.log(annuaire)
+}
 
 
 
